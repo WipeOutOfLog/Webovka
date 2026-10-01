@@ -1,2 +1,5 @@
 Delam novy soubor pro cviceni
 
+
+delam posledni upravy v souboru
+
