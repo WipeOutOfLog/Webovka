@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whisker Almanac</title>
+<link rel="icon" href="images/cat-face.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="brand">Whisker<span>.</span>Almanac</div>
+    <ul>
+      <li><a href="#numbers">Numbers</a></li>
+      <li><a href="#breeds">Breeds</a></li>
+      <li><a href="#age">Cat years</a></li>
+      <li><a href="#tails">Tail talk</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">Felis catus · a field guide for the household</span>
+      <h1>The cat is <em>watching</em> you.</h1>
+      <p class="lede">Ten thousand years ago a small wildcat started hanging around grain stores in the Fertile Crescent. It never quite agreed to be domesticated. This almanac covers what we do know: the numbers, the breeds, the age math, and what that tail is trying to say.</p>
+    </div>
+    <div>
+      <div class="cat-stage" id="cat">
+        <svg viewBox="0 0 400 400" aria-label="Illustrated cat face whose eyes follow your pointer" role="img">
+          <g class="ear-l"><path d="M95 175 L110 55 L190 120 Z" fill="var(--ink)"/><path d="M115 150 L122 88 L168 125 Z" fill="var(--amber-soft)"/></g>
+          <g class="ear-r"><path d="M305 175 L290 55 L210 120 Z" fill="var(--ink)"/><path d="M285 150 L278 88 L232 125 Z" fill="var(--amber-soft)"/></g>
+          <ellipse cx="200" cy="225" rx="135" ry="120" fill="var(--ink)"/>
+          <g id="eyeL">
+            <ellipse cx="148" cy="210" rx="34" ry="30" fill="var(--amber)"/>
+            <ellipse class="pupil" cx="148" cy="210" rx="7" ry="24" fill="var(--pupil)"/>
+            <rect class="lid" x="112" y="178" width="72" height="64" fill="var(--ink)"/>
+          </g>
+          <g id="eyeR">
+            <ellipse cx="252" cy="210" rx="34" ry="30" fill="var(--amber)"/>
+            <ellipse class="pupil" cx="252" cy="210" rx="7" ry="24" fill="var(--pupil)"/>
+            <rect class="lid" x="216" y="178" width="72" height="64" fill="var(--ink)"/>
+          </g>
+          <path d="M188 262 L212 262 L200 276 Z" fill="var(--amber-soft)"/>
+          <path d="M200 276 Q200 292 184 294 M200 276 Q200 292 216 294" stroke="var(--amber-soft)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <g stroke="var(--amber-soft)" stroke-width="2.5" stroke-linecap="round" opacity="0.8">
+            <line x1="160" y1="270" x2="40" y2="252"/><line x1="160" y1="280" x2="38" y2="286"/><line x1="162" y1="290" x2="50" y2="318"/>
+            <line x1="240" y1="270" x2="360" y2="252"/><line x1="240" y1="280" x2="362" y2="286"/><line x1="238" y1="290" x2="350" y2="318"/>
+          </g>
+        </svg>
+      </div>
+      <p class="cat-caption">Move your pointer. Click to get a slow blink back.</p>
+    </div>
+  </header>
+
+  <section id="numbers">
+    <div class="section-head">
+      <span class="eyebrow">By the numbers</span>
+      <h2>A small predator, precisely built</h2>
+    </div>
+    <div class="numbers">
+      <div class="stat"><div class="val">230<small>bones</small></div><p>About 24 more than you. Many are in the spine and tail, which is why they bend like that.</p></div>
+      <div class="stat"><div class="val">32<small>muscles / ear</small></div><p>Each ear swivels up to 180° on its own, tracking two sounds at once.</p></div>
+      <div class="stat"><div class="val">25–150<small>Hz</small></div><p>The purr range. It runs on both the in-breath and the out-breath.</p></div>
+      <div class="stat"><div class="val">12–16<small>h / day</small></div><p>Asleep. Most of the rest is grooming, which takes up to half of waking time.</p></div>
+    </div>
+  </section>
+
+  <section id="breeds">
+    <div class="section-head">
+      <span class="eyebrow">Breed guide</span>
+      <h2>Nine cats, nine temperaments</h2>
+      <p class="lede">Ratings are rough tendencies. Individual cats ignore them freely.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter breeds by coat">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All coats</button>
+      <button class="chip" type="button" data-f="short" aria-pressed="false">Short hair</button>
+      <button class="chip" type="button" data-f="long" aria-pressed="false">Long hair</button>
+      <button class="chip" type="button" data-f="none" aria-pressed="false">Hairless</button>
+    </div>
+    <div class="breeds" id="breedGrid"></div>
+  </section>
+
+  <section id="age" class="age">
+    <div class="section-head" style="margin-bottom:0">
+      <span class="eyebrow">Cat years</span>
+      <h2>How old is your cat, really?</h2>
+      <div class="age-notes">
+        <p>The "multiply by seven" rule is wrong for cats. They grow up fast: <strong>a one-year-old cat is roughly 15</strong> in human terms, and <strong>a two-year-old is about 24</strong>.</p>
+        <p>After that, each cat year adds about <strong>four human years</strong>. Indoor cats commonly live 13 to 17 years; the oldest on record, Creme Puff of Austin, Texas, reached 38.</p>
+      </div>
+    </div>
+    <div class="age-panel">
+      <label for="ageInput">Cat's age <output id="ageOut">5 years</output></label>
+      <input type="range" id="ageInput" min="0" max="25" step="0.5" value="5">
+      <div class="age-result" id="humanAge">36<small>human years</small></div>
+      <span class="stage-pill" id="stage">Prime</span>
+    </div>
+  </section>
+
+  <section id="tails">
+    <div class="section-head">
+      <span class="eyebrow">Body language</span>
+      <h2>Reading the tail</h2>
+      <p class="lede">The tail is the most honest part of a cat. Check it before you reach for a belly.</p>
+    </div>
+    <div class="tails">
+      <div class="tail">
+        <img src="images/tail-hooked.svg" alt="" width="54" height="70">
+        <h3>Upright, hooked tip</h3><p>Friendly greeting. Often followed by a head bump.</p>
+      </div>
+      <div class="tail">
+        <img src="images/tail-straight.svg" alt="" width="54" height="70">
+        <h3>Straight up</h3><p>Confident and pleased to see you.</p>
+      </div>
+      <div class="tail">
+        <img src="images/tail-swishing.svg" alt="" width="54" height="70">
+        <h3>Swishing</h3><p>Focused, irritated, or about to pounce. Give space.</p>
+      </div>
+      <div class="tail">
+        <img src="images/tail-puffed.svg" alt="" width="54" height="70">
+        <h3>Puffed up</h3><p>Frightened. The cat is trying to look twice its size.</p>
+      </div>
+      <div class="tail">
+        <img src="images/tail-tucked.svg" alt="" width="54" height="70">
+        <h3>Tucked low</h3><p>Anxious or unwell. Worth watching closely.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Whisker Almanac · for people who live with cats</span>
+    <span>Ages use the AAHA/AAFP life-stage guidelines</span>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
