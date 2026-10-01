@@ -5,4 +5,5 @@ delam posledni upravy v souboru
 
 dalsi edit
 pridavam dalsi edit
+doufam posledni commit
 
